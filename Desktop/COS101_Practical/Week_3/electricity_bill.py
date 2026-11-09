@@ -1,0 +1,19 @@
+customer_name = input("Customer's Name: ")
+energy_kwh = float(input("Enter energy consumed in kWh: "))
+
+while energy_kwh < 0:
+    print("Invaid consumption. Energy cannot be negative.")
+    energy_kwh = float(input("Enter energy consumed in kWh: "))
+        
+    if energy_kwh <= 50:
+        bill = energy_kwh * 50
+    elif energy_kwh <= 150:
+        bill = (50 * 50) + ((energy_kwh - 50) * 75)
+    else:
+        bill = (50 * 50) + (100 * 75) + ((energy_kwh - 150) * 100)
+
+    print("Electricity Bill")
+    print(f"Customer: {customer_name}")
+    print(f"Energy consumed: {energy_kwh:,.2f}")
+    print(f"Amount payable: NGN {bill:,.2f}")
+    
